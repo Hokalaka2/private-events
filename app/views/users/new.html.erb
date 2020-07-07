@@ -1,0 +1,10 @@
+<h1> Sign in/ Sign up </h1>
+<%= form_for(@user) do |f| %>
+    <%= f.label :loginid %>
+    <%= f.text_field :loginid, placeholder: "Enter 9 digit Login Id"%>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.submit%>
+<%end%>
