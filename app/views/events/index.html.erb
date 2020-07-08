@@ -1,0 +1,11 @@
+<ul>
+    <% @events.each do |event| %>
+    <li>
+        <%= event.description %>
+        <%= event.eventdate%>
+        <%= link_to "Event Creator", event_path(event.id)%>
+    </li>
+    <% end %>
+
+    <%= link_to "create new event", new_event_path%>
+</ul>

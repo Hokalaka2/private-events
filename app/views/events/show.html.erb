@@ -1,0 +1,12 @@
+<br /> Creator is <%= @event.creator.name %> <br />
+
+<h3> Attendee Names </h3>
+<ul>
+    <% @event.attendees.each do |attendee| %>
+    <li>
+        <%= attendee.name %>
+    </li>
+    <% end %>
+</ul>
+
+<%= link_to "All events ", events_path %>
