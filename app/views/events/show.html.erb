@@ -8,5 +8,11 @@
     </li>
     <% end %>
 </ul>
+<%= form_for AttendeeEvent.create do |f|%>
+    <%= f.label :attendee_id %>
+    <%= f.text_field :attendee_id %>
+    <%= f.hidden_field :event_id, value: @event.id %>
+    <%= f.submit "Submit" %>
+<% end %>
 
 <%= link_to "All events ", events_path %>

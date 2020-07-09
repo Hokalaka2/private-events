@@ -1,4 +1,16 @@
 <h1>Profile</h1>
 <p> User: <%= @user.name %> </p>
+<% @user.attended.order("eventdate") %>
+<p>
+    <ul>
+        <% @user.attended.each do |attended| %> 
+        <li>
+
+            <%= attended.description %>
+            <%= attended.eventdate %>
+        </li>
+        <% end %>
+    </ul>
+</p>
 
 <%= link_to "All events ", events_path %>

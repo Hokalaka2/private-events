@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
+  resources :attendee_events, only: [:create]
+
   resources :events, only: [:new, :create, :index, :show]
 
   resources :users, only: [:new, :create, :show]

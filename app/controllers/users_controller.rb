@@ -15,7 +15,8 @@ class UsersController < ApplicationController
     end
     def show
         if session[:user_id]
-            @user = User.find(session[:user_id])
+            @user = User.includes(:attended).find(session[:user_id])
+            
         else
             redirect_to '/login'
         end
