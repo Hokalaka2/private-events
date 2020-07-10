@@ -1,14 +1,18 @@
 <h1>Profile</h1>
 <p> User: <%= @user.name %> </p>
-<% @user.attended.order("eventdate") %>
+<% check = 0 %>
 <p>
     <ul>
-        <% @user.attended.each do |attended| %> 
-        <li>
-
-            <%= attended.description %>
-            <%= attended.eventdate %>
-        </li>
+        <li> Past Events </li>
+        <% @attendeds.each do |attended| %> 
+            <% if attended.eventdate > Date.today and check == 0 %>
+                    <p> Future events </p>
+                    <% check = 1 %>
+            <% end %>
+            <li>
+                <%= attended.description %>
+                <%= attended.eventdate %>
+            </li>
         <% end %>
     </ul>
 </p>

@@ -1,11 +1,20 @@
+<% check = 0%>
 <ul>
-    <% @events.each do |event| %>
+    <h4> Past Events </h4>
+    <% @eventspast.each do |event| %>
     <li>
         <%= event.description %>
         <%= event.eventdate%>
         <%= link_to "Event Creator", event_path(event.id)%>
     </li>
     <% end %>
-
-    <%= link_to "create new event", new_event_path%>
+    <h4> Future Events </h4>
+    <% @eventsfuture.each do |event| %>
+    <li>
+        <%= event.description %>
+        <%= event.eventdate%>
+        <%= link_to "Event Creator", event_path(event.id)%>
+    </li>
+    <% end %>
 </ul>
+

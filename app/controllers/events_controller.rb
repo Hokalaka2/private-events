@@ -14,7 +14,8 @@ class EventsController < ApplicationController
         @event = Event.find(params[:id])
     end
     def index
-        @events = Event.all
+            @eventspast = Event.past.all
+            @eventsfuture = Event.future.all
     end
 
     def event_params

@@ -16,7 +16,8 @@ class UsersController < ApplicationController
     def show
         if session[:user_id]
             @user = User.includes(:attended).find(session[:user_id])
-            
+            @attendeds = @user.attended.order('eventdate')
+            @check = 0
         else
             redirect_to '/login'
         end
